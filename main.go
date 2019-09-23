@@ -30,7 +30,9 @@ func getPwd() string {
 	reader := bufio.NewReader(os.Stdin)
 	fmt.Print("Enter user password: ")
 	pwd, _ := reader.ReadString('\n')
-	return strings.Trim(pwd, "\n")
+	pwd = strings.Trim(pwd, "\n")
+	pwd = strings.Trim(pwd, "\r")
+	return pwd
 }
 
 func wait() {
